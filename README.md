@@ -63,3 +63,5 @@ It is easy to run. Just clone the respository using VS code. Install the react-a
 
   Although it was all committed at once, I spent a lot of time on it in one day. I only had a few days to make it so 
   there are only a few commits.
+
+  Video going over application: 
