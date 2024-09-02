@@ -49,3 +49,17 @@ It is easy to run. Just clone the respository using VS code. Install the react-a
  by using the npm install command and check the package.json file in your new project to make 
  sure it matches this project. If anything is missing you can type npm i (name of missing dependency)
  and then use npm start to run it.
+
+ I created this project over several days, but then only committed it once everything ran properly. 
+
+ I first created the currentLocation page to get the current location to work which next meant I needed
+  to use the weather api to make it work which is when I added the apiKeys file. To make the api keys work for you. 
+  go to https://home.openweathermap.org/myservices and sign up, then register for free api keys. They will send you 
+  an email with your free api key and an api to test it with. Use the test link to make sure it works. Once it works, 
+  you can copy the api key into your own file where mine is listed.
+
+  Next, I create the search city function using the forecast.js file. This is where i added the cost to search different
+  cities weather. After this I just fine tuned everything. Such as converting times, temps and refining the UI in the css.
+
+  Although it was all committed at once, I spent a lot of time on it in one day. I only had a few days to make it so 
+  there are only a few commits.
