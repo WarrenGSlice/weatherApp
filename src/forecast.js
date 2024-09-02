@@ -8,8 +8,13 @@ function Forcast(props) {
   const [error, setError] = useState("");
   const [weather, setWeather] = useState({});
 
+  const handleClick = () => {
+    alert("The Product Manager Accelerator Program is designed to support PM professionals through every stage of their career. From students looking for entry-level jobs to Directors looking to take on a leadership role, our program has helped over hundreds of students fulfill their career aspirations.");
+  };
+
   const search = (city) => {
     axios
+    // can change the api key to pull different data such as metric units or whatever else you want to pull
       .get(
         `${apiKeys.base}weather?q=${
           city != "[object Object]" ? city : query
@@ -108,6 +113,9 @@ function Forcast(props) {
               {error.query} {error.message}
             </li>
           )}
+          <li>
+            <span><button type="button" onClick={handleClick}>PM Info</button></span>
+          </li>
         </ul>
       </div>
     </div>

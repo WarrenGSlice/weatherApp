@@ -97,12 +97,14 @@ class Weather extends React.Component {
       `${apiKeys.base}weather?lat=${lat}&lon=${lon}&units=metric&APPID=${apiKeys.key}`
     );
     const data = await api_call.json();
+    // Converts sunrise time to readable time
     let unix_timestamp = data.sys.sunrise;
     var sunriseDate = new Date(unix_timestamp * 1000);
     var sunriseHours = sunriseDate.getHours();
     var sunriseMinutes = "0" + sunriseDate.getMinutes();
     var sunriseSeconds = "0" + sunriseDate.getSeconds();
     var sunriseFormattedTime = sunriseHours + ':' + sunriseMinutes.substr(-2) + ":" + sunriseSeconds.substr(-2);
+    // converts sunset time to readable time
     let unix_sunsetStamp = data.sys.sunset;
     var sunsetDate = new Date(unix_sunsetStamp * 1000);
     var sunsetHours = sunsetDate.getHours();
@@ -119,9 +121,9 @@ class Weather extends React.Component {
       main: data.weather[0].main,
       country: data.sys.country,
       sunrise: (sunriseFormattedTime),
-
       sunset: (sunsetFormattedTime),
     });
+    // Different Weather types
     switch (this.state.main) {
       case "Haze":
         this.setState({ icon: "CLEAR_DAY" });
@@ -186,8 +188,6 @@ class Weather extends React.Component {
                 <p>
                   {this.state.temperatureF}°<span>F</span>
                 </p>
-                {/* <span className="slash">/</span>
-                {this.state.temperatureF} &deg;F */}
               </div>
               <div className="sunrise"><p>Sunrise:{this.state.sunrise}</p></div>
               <div className="sunset"><p>Sunset:{this.state.sunset}</p></div>
@@ -204,8 +204,7 @@ class Weather extends React.Component {
             Detecting your location
           </h3>
           <h3 style={{ color: "white", marginTop: "10px" }}>
-            Your current location wil be displayed on the App <br></br> & used
-            for calculating Real time weather.
+            Your current location wil be displayed <br></br> & will calculate your real time weather.
           </h3>
         </React.Fragment>
       );
